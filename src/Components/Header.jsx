@@ -4,6 +4,7 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -17,22 +18,19 @@ function Header() {
             <div className="flex items-center gap-16 my-12">
               {/* logo */}
               <div>
-                <a
-                  href="/"
+                <Link to="/"
                   className="flex gap-1 font-bold text-gray-700 items-center "
                 >
                   <PaperAirplaneIcon className="h-6 w-6 text-primary" />
                   <span>Paper.io</span>
-                </a>
+                </Link>
               </div>
               {/* primary */}
               <div className="hidden md:flex gap-8 ">
-                <a href="#" className="">
-                  Home
-                </a>
-                <a href="#">Benefits</a>
-                <a href="#">Our Classes</a>
-                <a href="#">Contact Us</a>
+                <Link to="/" className="">Home</Link>
+                <Link to="/Contact">Benefits</Link>
+                <Link to="/Contact">Our Classes</Link>
+                <Link to="/Contact">Contact Us</Link>
               </div>
             </div>
             {/* secondary */}
@@ -52,18 +50,17 @@ function Header() {
         </div>
         {/* mobile navigation */}
         <div
-          className={`fixed z-40 w-full  bg-gray-100 overflow-hidden flex flex-col lg:hidden gap-12  origin-top duration-700 ${
-            !toggleMenu ? "h-0" : "h-full"
-          }`}
+          className={`fixed z-40 w-full  bg-gray-100 overflow-hidden flex flex-col lg:hidden gap-12  origin-top duration-700 ${!toggleMenu ? "h-0" : "h-full"
+            }`}
         >
           <div className="px-8">
             <div className="flex flex-col gap-8 font-bold tracking-wider">
-              <a href="#" className="border-l-4 border-gray-600">
+              <Link to="/Services" className="border-l-4 border-gray-600">
                 Features
-              </a>
-              <a href="#">Pricing</a>
-              <a href="#">Download</a>
-              <a href="#">Classic</a>
+              </Link>
+              <Link to="/Contact">Pricing</Link>
+              <Link to="/Contact">Download</Link>
+              <Link to="/Contact">Classic</Link>
             </div>
           </div>
         </div>
